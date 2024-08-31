@@ -14,4 +14,4 @@ updates:
     schedule:
       interval: daily
       time: "10:00"
-      timezone: Astana/Dhaka
+      timezone: America/Toronto

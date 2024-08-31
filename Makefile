@@ -1,16 +1,33 @@
 #!/usr/bin/make
 
+# ----------------------------------------------- #
+# Note: this file originates in template-node-lib #
+# ----------------------------------------------- #
+
+NPMRC := $(shell npm config get userconfig)
+
 pull: ## pull latest containers
 	@docker compose pull
 
-lint: ## run mega-linter
-	@docker compose run --rm lint
-
-readme: ## run readme action
+readme: ## generate root README.md
 	@docker compose run --rm readme
 
-clean: ## remove running containers, volumes, node_modules & anything else
-	@docker compose rm --stop --volumes --force
+lint: ## run super-linter
+	@docker compose run --rm lint
+
+install: ## install all dependencies
+	@docker compose run --rm app install
+
+test: ## run all npm tests
+	@docker compose run --rm app test
+
+shell: ## start the container shell
+	@docker compose run --rm --entrypoint /bin/sh app
+
+clean: ## delete containers, images, volumes, node_modules
+	@docker compose run --rm --entrypoint "rm -rf node_modules" app
+	@docker compose rm --stop --force --volumes
+	@docker compose down --remove-orphans --volumes --rmi local
 
 # Utility methods
 ## Help: https://marmelab.com/blog/2016/02/29/auto-documented-makefile.html

@@ -1,0 +1,41 @@
+{
+  "version": "0.0.0-semantically-released",
+  "name": "@khulnasoft-lab/template-node-lib",
+  "description": "node library project template",
+  "author": "KhulnaSoft, Ltd <opensource@khulnasoft.com> (https://www.khulnasoft.com)",
+  "homepage": "https://github.com/khulnasoft-lab/template-node-lib",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/khulnasoft-lab/template-node-lib.git"
+  },
+  "bugs": {
+    "url": "https://github.com/khulnasoft-lab/template-node-lib/issues"
+  },
+  "funding": {
+    "type": "individual",
+    "url": "https://github.com/sponsors/khulnasoft-bot"
+  },
+  "license": "MIT",
+  "keywords": [
+    "template",
+    "node",
+    "library"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "files": [
+    "src"
+  ],
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "npm run test:cli -- test",
+    "test:cli": "node --experimental-test-coverage --test",
+    "test:watch": "npm run test:cli -- --watch test",
+    "test:ci": "npm run test:cli -- --test-reporter node-test-github-reporter test"
+  },
+  "devDependencies": {
+    "node-test-github-reporter": "^1.2.0"
+  }
+}

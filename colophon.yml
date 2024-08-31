@@ -1,0 +1,8 @@
+version: 2.0
+
+id: template-node-lib
+
+about:
+  title: Node Lib Template
+  description: node library project template
+  repository: khulnasoft-lab/template-node-lib

@@ -1,0 +1,7 @@
+# ----------------------------------------------- #
+# Note: this file originates in template-node-lib #
+# ----------------------------------------------- #
+
+*.log
+node_modules
+**/dist

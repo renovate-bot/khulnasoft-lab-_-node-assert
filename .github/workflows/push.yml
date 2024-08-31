@@ -1,0 +1,20 @@
+# ----------------------------------------------- #
+# Note: this file originates in template-template #
+# ----------------------------------------------- #
+
+name: push
+
+on:
+  - push
+  - workflow_dispatch
+
+permissions: read-all
+
+jobs:
+  main:
+    uses: khulnasoft/actions/.github/workflows/push-template.yml@master
+    secrets: inherit
+    permissions:
+      contents: write
+      statuses: write
+      pull-requests: write

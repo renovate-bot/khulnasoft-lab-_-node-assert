@@ -1,0 +1,18 @@
+# ----------------------------------------------- #
+# Note: this file originates in template-node-lib #
+# ----------------------------------------------- #
+
+# copy of .gitignore (npm will only use .npmignore if it exists)
+*.log
+node_modules
+**/dist
+
+# additional ignore
+.editorconfig
+.github
+.pandoc.yml
+.release.json
+colophon.yml
+docker-compose.yml
+Makefile
+test
