@@ -50,9 +50,9 @@ services:
   node18:
     profiles: ["test"]
     extends: test-command
-    image: node:18-alpine
+    image: node:23-alpine
 
   node20:
     profiles: ["test"]
     extends: test-command
-    image: node:20-alpine
+    image: node:23-alpine
